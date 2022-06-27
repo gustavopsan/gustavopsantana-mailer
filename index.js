@@ -3,7 +3,7 @@ const bodyParser = require("body-parser")
 const nodeMailer = require("nodemailer")
 const cors = require("cors")
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 app.use(
     (req, res, next) => {
@@ -58,4 +58,4 @@ app.post("/send-message", (req, res) => {
     })
 })
 
-app.listen(PORT)
+app.listen(process.env.PORT || PORT)
