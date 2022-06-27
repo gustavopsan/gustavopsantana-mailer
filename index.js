@@ -30,13 +30,13 @@ app.post("/send-message", (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: "gustavopsantana4@gmail.com",
-            pass: "cfgiechvsfrvhutg"
+            user: process.env.gmail_account,
+            pass: process.env.gmail_password
         }
     })
 
     const mailOptions = {
-        from: "'Site Gustavo P. Santana' gustavopsantana4@gmail.com",
+        from: "'Site Gustavo P. Santana' gustavopsantana.contato@gmail.com",
         to: req.body.destination,
         subject: req.body.subject,
         text: req.body.message,
